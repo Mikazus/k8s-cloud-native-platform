@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cloud-app
+  namespace: demo
+  labels:
+    release: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: cloud-app
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
