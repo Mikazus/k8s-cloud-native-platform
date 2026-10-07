@@ -4,7 +4,7 @@ Proyek portofolio untuk mempelajari cara membangun, menjalankan, dan menguji ket
 
 Aplikasinya sengaja sederhana. Yang dipelajari adalah **infrastruktur di sekitarnya**.
 
-## Tujuan Belajar
+## Goal 
 
 - Memahami siklus penuh: kode, image, registry, cluster, monitoring
 - Membuktikan sifat sistem terdistribusi secara nyata: replikasi, deteksi kegagalan, penjadwalan ulang, dan penskalaan
@@ -25,7 +25,7 @@ Kubernetes (k3d: 1 server + 2 agent)
    Prometheus (scrape /metrics) --> Grafana (dashboard)
 ```
 
-## Teknologi
+## Tech Stack
 
 | Komponen | Fungsi |
 |---|---|
@@ -49,7 +49,7 @@ docs/       Screenshot dan bukti uji
 .github/    Workflow CI
 ```
 
-## Cara Menjalankan dari Nol
+## RUN
 
 Prasyarat: WSL2 (Ubuntu), Docker Engine, kubectl, k3d, helm. RAM disarankan 8 GB atau lebih.
 
@@ -82,7 +82,7 @@ kubectl port-forward -n monitoring svc/monitoring-grafana 3002:80
 kubectl port-forward -n argocd svc/argocd-server 8081:443
 ```
 
-## Alur Kerja (GitOps)
+## FLOW
 
 1. Ubah kode lalu `git push`.
 2. GitHub Actions membangun image, memberi tag SHA commit, mengirimnya ke GHCR, dan mengubah tag di `k8s/deployment.yaml`.
@@ -134,9 +134,9 @@ Catatan desain: field `replicas` sengaja tidak ditulis di Deployment karena juml
 ### Bukti
 
 ![Dashboard Grafana](docs/grafana.png)
-![ArgoCD](docs/argocd.png)
-![Autoscaling puncak](docs/autoscaling-puncak.png)
-![Autoscaling turun](docs/autoscaling-turun.png)
+![ArgoCD]
+![Autoscaling puncak]
+![Autoscaling turun]
 
 ## Masalah yang Saya Temui dan Solusinya
 
@@ -165,6 +165,5 @@ Catatan desain: field `replicas` sengaja tidak ditulis di Deployment karena juml
 - PodDisruptionBudget dan penyimpanan persisten
 - Menjalankan layanan inference AI di atas platform ini untuk meneliti penskalaan dan penjadwalan resource
 
-## Penulis
-
-ISI nama dan kontak.
+## Dev
+Mikhael L Then
