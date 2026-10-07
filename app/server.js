@@ -13,7 +13,7 @@ const requests = new client.Counter({
 
 app.get('/', (req, res) => {
   requests.inc({ route: '/' });
-  res.json({ pod: os.hostname(), version: process.env.APP_VERSION || 'v1' });
+  res.json({ pod: os.hostname(), version: process.env.APP_VERSION || 'v2' });
 });
 
 // endpoint pembakar CPU (~100ms) untuk menguji autoscaling
