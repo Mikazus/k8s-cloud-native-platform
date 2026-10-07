@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: cloud-app
-          image: cloud-app:v1
+          image: ghcr.io/mikazus/k8s-cloud-native-platform/cloud-app:33e383ae1abbd69f2f27199da68f94735ad64955
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
